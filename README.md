@@ -1,2 +1,2 @@
-# CPS-3320-Python-Programming
+# CPS-3320-Python-Programming Project 
 Python Banking Project
