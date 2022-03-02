@@ -3,7 +3,7 @@
 
 # In[5]:
 
-#this code asks the user to enter a credit card number and checks if it's valid
+#this code asks the user to enter a credit card number and checks if the input is valid
 def validator(n):
 #checks if the user's input follows the credit card algorithm 
     validatelist=[]
