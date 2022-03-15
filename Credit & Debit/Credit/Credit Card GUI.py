@@ -3,7 +3,7 @@
 
 # In[38]:
 
-
+#this code will create a GUI that asks the user to enter a credit card number, the number has to be 16 digits and it has to follow a certain algorithm (ex: 4642917704285981)
 import tkinter as tk
 
 class SampleApp(tk.Tk):
@@ -50,5 +50,5 @@ class SampleApp(tk.Tk):
 
 app = SampleApp()
 app.mainloop()
-#4642917704285981
+
 
