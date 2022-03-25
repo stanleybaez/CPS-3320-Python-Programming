@@ -1,17 +1,14 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[38]:
-
-#this code will create a GUI that asks the user to enter a credit card number, the number has to be 16 digits and it has to follow a certain algorithm (ex: 4642917704285981)
 import tkinter as tk
 
 class SampleApp(tk.Tk):
     def __init__(self):
         tk.Tk.__init__(self)
-        self.label = tk.Label(self, text="Please enter the 16 digit credit card number : ")
-        self.UserInput = tk.Entry(self)
-        self.button = tk.Button(self, text="Confirm", command=self.validator)
+        self.title('Credit Card GUI')
+        self.configure(bg='orange')
+        self.geometry("300x200")
+        self.label = tk.Label(self, text="Please enter the 16 digit credit card number : ", bg='orange')
+        self.UserInput = tk.Entry(self, show = '*', bg='orange')
+        self.button = tk.Button(self, text="Confirm", command=self.validator, bg='orange')
         self.label.pack()
         self.button.pack()
         self.UserInput.pack()
