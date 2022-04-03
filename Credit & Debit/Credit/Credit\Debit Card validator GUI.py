@@ -57,39 +57,37 @@ class SampleApp(tk.Tk):
 
             #second condition
             if sum(validatelist)%10 == 0:
-                self.valid = tk.Label(self, text="This a valid credit card", bg='orange')
-                self.valid.pack()
-                
+                self.confirm.destroy()
+                self.again = tk.Button(self, text="try another card?", command=self.Retry3, bg='orange')
+                self.again.pack()
                 
             #Extra conditions that checks the card type 
                 if self.UserInput.get()[0] == "1":
-                    self.cardType = tk.Label(self, text="Airlines", bg='orange')
+                    self.cardType = tk.Label(self, text="This is a valid Airlines card", bg='orange')
                 if self.UserInput.get()[0] == "2":
-                    self.cardType = tk.Label(self, text="Airlines & Financial", bg='orange')
+                    self.cardType = tk.Label(self, text="This is a valid Airlines & Financial card", bg='orange')
                 if self.UserInput.get()[0] == "3":
                     print("American Express")
-                    self.cardType = tk.Label(self, text="American Express", bg='orange')
+                    self.cardType = tk.Label(self, text="This is a valid American Express card", bg='orange')
                 if self.UserInput.get()[0] == "4":
                     print("Visa")
-                    self.cardType = tk.Label(self, text="Visa", bg='orange')
+                    self.cardType = tk.Label(self, text="This is a valid Visa card", bg='orange')
                 if self.UserInput.get()[0] == "5":
                     print("Master Card")
-                    self.cardType = tk.Label(self, text="Master Card", bg='orange')
+                    self.cardType = tk.Label(self, text="This is a valid Master Card", bg='orange')
                 if self.UserInput.get()[0] == "6":
                     print("Discover")
-                    self.cardType = tk.Label(self, text="Discover", bg='orange')
+                    self.cardType = tk.Label(self, text="This is a valid Discover card", bg='orange')
                 if self.UserInput.get()[0] == "7":
                     print("Petroleum")
-                    self.cardType = tk.Label(self, text="Petroleum", bg='orange')
+                    self.cardType = tk.Label(self, text="This is a valid Petroleum card", bg='orange')
                 if self.UserInput.get()[0] == "8":
                     print("Health Care & Telecommunications")
-                    self.cardType = tk.Label(self, text="Health Care & Telecommunications", bg='orange')
+                    self.cardType = tk.Label(self, text="This is a valid Health Care & Telecommunications card", bg='orange')
                 if self.UserInput.get()[0] == "9":
                     print("Open for Assignment")
-                    self.cardType = tk.Label(self, text="Open for Assignment", bg='orange')
+                    self.cardType = tk.Label(self, text="This is a valid Open for Assignment card", bg='orange')
                 self.cardType.pack()
-                #print('This a valid credit card') 
-
                 
                 
                 
@@ -100,15 +98,22 @@ class SampleApp(tk.Tk):
                 self.invalid = tk.Label(self, text="This is not valid credit card", bg='orange')
                 self.invalid.pack()
                 self.confirm.destroy()
+                
+        #the try again function if user's input passed all conditions
+    def Retry3(self):
+        self.again.destroy()
+        self.cardType.destroy()
+        self.confirm = tk.Button(self, text="Confirm", command=self.validator, bg='orange')
+        self.confirm.pack()  
         
-        #the try again button if user's input failed to pass the second condition
+        #the try again function if user's input failed to pass the second condition
     def Retry2(self):
         self.invalid.destroy()
         self.retry2.destroy()
         self.confirm = tk.Button(self, text="Confirm", command=self.validator, bg='orange')
         self.confirm.pack()
         
-        #the try again button if user's input failed to pass the first condition
+        #the try again function if user's input failed to pass the first condition
     def Retry(self):
         self.wrong.destroy()
         self.retry.destroy()
